@@ -26,6 +26,9 @@ public class NetWorkActivity extends BaseActivity<ActivityNetWorkBinding, NetWor
     @Override
     public void initData() {
         super.initData();
+
+        showLeft(true,this);
+        showTitle(true,"网络设置");
         viewModel.setContext(this);
         binding.button.setOnClickListener(viewModel.listener);
 

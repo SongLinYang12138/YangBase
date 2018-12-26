@@ -1,19 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto">
+
     <data>
+
         <variable
             name="imageViewModle"
-            type="com.bondex.ysl.bondex.base.image.ImageViewModle"/>
+            type="com.bondex.ysl.bondex.base.image.ImageViewModle" />
     </data>
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        >
+        android:layout_height="match_parent">
+
         <include layout="@layout/tile_layout"></include>
 
 
+        <ImageView
+            android:id="@+id/iv"
+            onClickCommand="@{imageViewModle.command}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/img_photo"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
 
     </android.support.constraint.ConstraintLayout>

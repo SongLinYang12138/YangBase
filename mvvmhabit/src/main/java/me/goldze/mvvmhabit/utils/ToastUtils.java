@@ -381,38 +381,43 @@ public final class ToastUtils {
      * @param text     文本
      * @param duration 显示时长
      */
-    private static void show(CharSequence text, int duration) {
-        cancel();
-        boolean isCustom = false;
-        if (sViewWeakReference != null) {
-            final View view = sViewWeakReference.get();
-            if (view != null) {
-                sToast = new Toast(Utils.getContext());
-                sToast.setView(view);
-                sToast.setDuration(duration);
-                isCustom = true;
-            }
-        }
-        if (!isCustom) {
-            if (messageColor != DEFAULT_COLOR) {
-                SpannableString spannableString = new SpannableString(text);
-                ForegroundColorSpan colorSpan = new ForegroundColorSpan(messageColor);
-                spannableString.setSpan(colorSpan, 0, spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                sToast = Toast.makeText(Utils.getContext(), spannableString, duration);
-            } else {
-                sToast = Toast.makeText(Utils.getContext(), text, duration);
-            }
-        }
-        View view = sToast.getView();
-        if (bgResource != -1) {
-            view.setBackgroundResource(bgResource);
-        } else if (backgroundColor != DEFAULT_COLOR) {
-            view.setBackgroundColor(backgroundColor);
-        }
-        sToast.setGravity(gravity, xOffset, yOffset);
-        sToast.show();
-    }
+//    private static void show(CharSequence text, int duration) {
+//        cancel();
+//        boolean isCustom = false;
+//        if (sViewWeakReference != null) {
+//            final View view = sViewWeakReference.get();
+//            if (view != null) {
+//                sToast = new Toast(Utils.getContext());
+//                sToast.setView(view);
+//                sToast.setDuration(duration);
+//                isCustom = true;
+//            }
+//        }
+//        if (!isCustom) {
+//            if (messageColor != DEFAULT_COLOR) {
+//                SpannableString spannableString = new SpannableString(text);
+//                ForegroundColorSpan colorSpan = new ForegroundColorSpan(messageColor);
+//                spannableString.setSpan(colorSpan, 0, spannableString.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
+//                sToast = Toast.makeText(Utils.getContext(), spannableString, duration);
+//            } else {
+//                sToast = Toast.makeText(Utils.getContext(), text, duration);
+//            }
+//        }
+//        View view = sToast.getView();
+//        if (bgResource != -1) {
+//            view.setBackgroundResource(bgResource);
+//        } else if (backgroundColor != DEFAULT_COLOR) {
+//            view.setBackgroundColor(backgroundColor);
+//        }
+//        sToast.setGravity(gravity, xOffset, yOffset);
+//        sToast.show();
+//    }
 
+        private static void show(CharSequence text, int duration) {
+
+            Toast.makeText(Utils.getContext(),text,duration).show();
+
+        }
     /**
      * 取消吐司显示
      */

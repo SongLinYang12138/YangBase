@@ -7,10 +7,13 @@ import android.arch.lifecycle.ViewModelProviders;
 import android.content.Intent;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -40,11 +43,14 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
     private MaterialDialog dialog;
     private ImageView ivBack;
     private TextView tvTitle;
+
     private IconText iconRight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+        setToolBar();
         //页面接受的参数方法
         initParam();
         //私有的初始化Databinding和ViewModel方法
@@ -60,9 +66,9 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
     }
 
 
-    protected void showLeft(boolean isShow, Activity activity){
+    protected void showLeft(boolean isShow, Activity activity) {
 
-        if(ivBack == null) return;
+        if (ivBack == null) return;
 
         ivBack.setVisibility(isShow ? View.VISIBLE : View.INVISIBLE);
         ivBack.setOnClickListener(new View.OnClickListener() {
@@ -73,9 +79,9 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
         });
     }
 
-    protected void showTitle(boolean isShow,String title){
+    protected void showTitle(boolean isShow, String title) {
 
-        if(tvTitle == null) return;
+        if (tvTitle == null) return;
 
         tvTitle.setVisibility(isShow ? View.VISIBLE : View.INVISIBLE);
         tvTitle.setText(title);
@@ -101,6 +107,7 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
         binding = DataBindingUtil.setContentView(this, initContentView(savedInstanceState));
 
 
+        binding.getRoot().setFitsSystemWindows(true);
         ivBack = binding.getRoot().findViewById(R.id.title_back);
         tvTitle = binding.getRoot().findViewById(R.id.title_title);
 
@@ -297,5 +304,28 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
      */
     public <T extends ViewModel> T createViewModel(FragmentActivity activity, Class<T> cls) {
         return ViewModelProviders.of(activity).get(cls);
+    }
+
+    public void setToolBar() {
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
+            int flagTranslucentStatus = WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS;
+            int flagTranslucentNavigation = WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION;
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+                Window window = getWindow();
+                WindowManager.LayoutParams attributes = window.getAttributes();
+                attributes.flags |= flagTranslucentNavigation;
+
+                window.setAttributes(attributes);
+
+                getWindow().setStatusBarColor(getResources().getColor(R.color.colorPrimary));
+            } else {
+                Window window = getWindow();
+                WindowManager.LayoutParams attributes = window.getAttributes();
+                attributes.flags |= flagTranslucentStatus | flagTranslucentNavigation;
+                window.setAttributes(attributes);
+            }
+        }
+
     }
 }

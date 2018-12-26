@@ -72,4 +72,6 @@ dependencies {
 
     api rootProject.ext.dependencies["avi"]
     api rootProject.ext.dependencies["spinner"]
+    api rootProject.ext.dependencies["photoView"]
+
 }

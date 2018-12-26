@@ -6,6 +6,7 @@ import com.bondex.ysl.bondex.base.login.LoginActivity;
 
 import me.goldze.mvvmhabit.base.BaseApplication;
 import me.goldze.mvvmhabit.crash.CaocConfig;
+import me.goldze.mvvmhabit.utils.Utils;
 
 /**
  * date: 2018/12/21
@@ -31,7 +32,7 @@ public class AppApplication extends BaseApplication {
                 .trackActivities(true) //是否跟踪Activity
                 .minTimeBetweenCrashesMs(2000) //崩溃的间隔时间(毫秒)
                 .errorDrawable(R.mipmap.ic_launcher) //错误图标
-//                .restartActivity(LoginActivity.class) //重新启动后的activity
+                .restartActivity(LoginActivity.class) //重新启动后的activity
 //                .errorActivity(.class) //崩溃后的错误activity
 //                .eventListener(new YourCustomEventListener()) //崩溃后的错误监听
                 .apply();

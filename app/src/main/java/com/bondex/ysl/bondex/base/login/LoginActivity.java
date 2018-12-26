@@ -8,6 +8,7 @@ import com.bondex.ysl.bondex.base.R;
 import com.bondex.ysl.bondex.base.databinding.ActivityLoginBinding;
 
 import me.goldze.mvvmhabit.base.BaseActivity;
+import me.goldze.mvvmhabit.utils.Utils;
 
 public class LoginActivity extends BaseActivity<ActivityLoginBinding,LoginViewModel> {
 
@@ -15,7 +16,7 @@ public class LoginActivity extends BaseActivity<ActivityLoginBinding,LoginViewMo
 
     @Override
     public int initContentView(Bundle savedInstanceState) {
-
+        Utils.init(this);
         return R.layout.activity_login;
     }
 
