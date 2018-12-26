@@ -10,6 +10,9 @@ import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.FragmentActivity;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.trello.rxlifecycle2.components.support.RxAppCompatActivity;
@@ -18,9 +21,11 @@ import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
 import java.util.Map;
 
+import me.goldze.mvvmhabit.R;
 import me.goldze.mvvmhabit.base.BaseViewModel.ParameterField;
 import me.goldze.mvvmhabit.bus.Messenger;
 import me.goldze.mvvmhabit.utils.MaterialDialogUtils;
+import me.goldze.mvvmhabit.widget.IconText;
 
 
 /**
@@ -33,6 +38,9 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
     protected VM viewModel;
     protected int viewModelId;
     private MaterialDialog dialog;
+    private ImageView ivBack;
+    private TextView tvTitle;
+    private IconText iconRight;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,10 +62,23 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
 
     protected void showLeft(boolean isShow, Activity activity){
 
+        if(ivBack == null) return;
+
+        ivBack.setVisibility(isShow ? View.VISIBLE : View.INVISIBLE);
+        ivBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     protected void showTitle(boolean isShow,String title){
 
+        if(tvTitle == null) return;
+
+        tvTitle.setVisibility(isShow ? View.VISIBLE : View.INVISIBLE);
+        tvTitle.setText(title);
     }
 
     @Override
@@ -78,6 +99,11 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
     private void initViewDataBinding(Bundle savedInstanceState) {
         //DataBindingUtil类需要在project的build中配置 dataBinding {enabled true }, 同步后会自动关联android.databinding包
         binding = DataBindingUtil.setContentView(this, initContentView(savedInstanceState));
+
+
+        ivBack = binding.getRoot().findViewById(R.id.title_back);
+        tvTitle = binding.getRoot().findViewById(R.id.title_title);
+
         viewModelId = initVariableId();
         viewModel = initViewModel();
         if (viewModel == null) {

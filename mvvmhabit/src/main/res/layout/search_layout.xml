@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center"
+    android:background="@color/white_back"
+    >
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingVertical="@dimen/marginVertical"
+        android:gravity="center_vertical"
+        android:background="@drawable/user_edit"
+        android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+        android:paddingHorizontal="@dimen/activity_horizontal_margin"
+        >
+        <EditText
+            android:id="@+id/search_editext"
+            android:layout_width="0dp"
+            android:layout_height="35dp"
+            android:layout_weight="1"
+            android:background="@null"
+            />
+        <View
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+            android:background="@color/metal_gray"
+            android:layout_marginRight="@dimen/padding_small"
+            />
+        <me.goldze.mvvmhabit.widget.IconText
+            android:id="@+id/search_icon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/search"
+            android:textSize="@dimen/icon_normal"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

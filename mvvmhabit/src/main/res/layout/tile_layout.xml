@@ -14,7 +14,7 @@
         android:background="@color/colorPrimary">
 
         <ImageView
-            android:id="@+id/base_back"
+            android:id="@+id/title_back"
             android:layout_width="35dp"
             android:layout_height="35dp"
             android:layout_centerVertical="true"
@@ -23,7 +23,7 @@
             android:textColor="@color/white_back" />
 
         <TextView
-            android:id="@+id/base_title"
+            android:id="@+id/title_title"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
@@ -35,7 +35,7 @@
 
 
         <me.goldze.mvvmhabit.widget.IconText
-            android:id="@+id/base_right"
+            android:id="@+id/title_right"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"

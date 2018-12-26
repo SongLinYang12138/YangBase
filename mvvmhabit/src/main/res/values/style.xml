@@ -23,6 +23,7 @@
         <item name="android:textColor">@color/text_gray</item>
         <item name="android:textSize">@dimen/text_nromal</item>
         <item name="android:textAlignment">textStart</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="tv_small_gray">
@@ -50,7 +51,8 @@
     </style>
 
     <style name="bt_login">
-
+        <item name="android:background">@drawable/bt_login_selector</item>
+<item name="android:textSize">@dimen/text_nromal</item>
 
     </style>
 </resources>

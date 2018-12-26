@@ -13,11 +13,13 @@
         <item>#3303A9F4</item>
         <item>#1903A9F4</item>
     </array>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#D81B60</color>
 
-
-    <color name="colorPrimary">#01AEF0</color>
-    <color name="colorPrimaryDark">#4C7BB3</color>
-    <color name="colorAccent">#005AAB</color>
+    <!--<color name="colorPrimary">#01AEF0</color>-->
+    <!--<color name="colorPrimaryDark">#4C7BB3</color>-->
+    <!--<color name="colorAccent">#005AAB</color>-->
 
 
     <!--消息界面-->
