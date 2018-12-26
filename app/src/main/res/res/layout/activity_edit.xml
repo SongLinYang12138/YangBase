@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="editModle"
+            type="com.bondex.ysl.bondex.base.edit.EditViewModle" />
+
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <include
+            android:id="@+id/include" layout="@layout/tile_layout"></include>
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edit1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimaryDark"
+            android:hint="highlight"
+            android:outlineAmbientShadowColor="@color/text_black"
+            android:outlineSpotShadowColor="@color/metal_gray"
+            android:shadowColor="@color/colorPrimaryDark"
+            android:text="highlight"
+android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+app:layout_constraintTop_toBottomOf="@id/include"            app:met_floatingLabel="highlight"
+            app:met_primaryColor="@color/gray"
+            app:met_underlineColor="@color/colorPrimary" />
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edit2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintTop_toBottomOf="@id/edit1"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+
+            android:hint="normal"
+            android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+            android:outlineSpotShadowColor="@color/metal_gray"
+            android:shadowColor="@color/colorPrimaryDark"
+            android:text="normal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:met_floatingLabel="normal"
+            app:met_primaryColor="@color/gray"
+            app:met_underlineColor="@color/colorPrimary" />
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edit3"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimaryDark"
+            android:hint="met_singleLineEllipsis"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+
+            android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+            android:outlineSpotShadowColor="@color/metal_gray"
+            android:shadowColor="@color/colorPrimaryDark"
+            android:text="测试数据，当字数大于Editext的宽度时，可以拖动展示"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.123"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit2"
+            app:met_floatingLabel="normal"
+            app:met_primaryColor="@color/gray"
+            app:met_singleLineEllipsis="true"
+            app:met_underlineColor="@color/colorPrimary" />
+
+
+
+        <com.rengwuxian.materialedittext.MaterialEditText
+            android:id="@+id/edit4"
+            android:layout_width="match_parent"
+            android:layout_marginHorizontal="@dimen/activity_horizontal_margin"
+
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@color/colorPrimaryDark"
+            android:outlineAmbientShadowColor="@color/colorPrimaryDark"
+            android:outlineSpotShadowColor="@color/metal_gray"
+            android:shadowColor="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/edit3"
+            android:text=""
+            app:met_maxCharacters="30"
+            app:met_minCharacters="4"
+            app:met_floatingLabel="normal"
+            app:met_primaryColor="@color/gray"
+            app:met_singleLineEllipsis="true"
+            app:met_underlineColor="@color/colorPrimary" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
