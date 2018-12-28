@@ -4,11 +4,20 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "com.bondex.ysl.bondex.base"
-        minSdkVersion 19
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+
+        splits {
+            abi {
+                enable true
+                reset()
+                include 'armeabi-v7a', 'arm64', 'armv5', 'armeabi'
+                universalApk false
+            }
+        }
     }
     buildTypes {
         release {
@@ -20,6 +29,8 @@ android {
     dataBinding {
         enabled = true
     }
+
+
 }
 
 dependencies {
@@ -28,5 +39,6 @@ dependencies {
     implementation project(':mvvmhabit')
     implementation project(':zxing')
     implementation project(':convenientbanner')
+    implementation project(':videolibrary')
     implementation 'com.android.support:design:27.1.1'
 }

@@ -27,6 +27,7 @@ import com.bondex.ysl.bondex.base.switches.SwitchActivity;
 import com.bondex.ysl.bondex.base.tab.TabActivity;
 import com.bondex.ysl.bondex.base.text.TextActivity;
 import com.bondex.ysl.bondex.base.utils.NoDoubleClickListener;
+import com.bondex.ysl.bondex.base.video.VideoActivity;
 import com.bondex.ysl.bondex.base.webview.WebviewActivity;
 
 import java.util.ArrayList;
@@ -172,6 +173,9 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                         break;
                     case "image":
                         intent = new Intent(context, ImageActivity.class);
+                        break;
+                    case "video":
+                        intent = new Intent(context,VideoActivity.class);
                         break;
                 }
 
