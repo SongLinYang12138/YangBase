@@ -6,35 +6,31 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
 import android.net.ConnectivityManager;
-import android.net.NetworkInfo;
 import android.os.Build;
 import android.support.annotation.NonNull;
 import android.util.Log;
 import android.view.View;
 import android.widget.Toast;
-
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.bondex.ysl.bondex.base.utils.NoDoubleClickListener;
-
 import me.goldze.mvvmhabit.base.BaseViewModel;
+import me.goldze.mvvmhabit.http.NetworkUtil;
 
 /**
  * date: 2018/12/24
  * Author: ysl
  * description:
  */
-public class NetWorkViewModle extends BaseViewModel  {
-//implements HttpReceiverResult
-//    private HttpReceiver receiver = new HttpReceiver();
+public class NetWorkViewModle extends BaseViewModel {
+
     private Context context;
 
     public NoDoubleClickListener listener = new NoDoubleClickListener() {
         @Override
         public void noDouble(View v) {
 
-//            boolean isConnected = HttpUtil.isNetworkConnected(context);
-                        boolean isConnected = false;
+            boolean isConnected = NetworkUtil.isNetworkAvailable(context);
 
             Log.i("aaa", " isConnected  " + isConnected);
             if (!isConnected) {
@@ -63,7 +59,9 @@ public class NetWorkViewModle extends BaseViewModel  {
 
                 try {
 
-                    Toast.makeText(context, "网络连接正常", Toast.LENGTH_SHORT).show();
+                    String msg = NetworkUtil.isWifi(context) ? "当前网络是wifi" : "当前网络是移动流量";
+
+                    Toast.makeText(context, "网络连接正常 "+msg, Toast.LENGTH_SHORT).show();
                 } catch (Exception e) {
                     e.printStackTrace();
                 }

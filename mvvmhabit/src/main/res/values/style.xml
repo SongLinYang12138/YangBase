@@ -2,7 +2,7 @@
 <resources>
 
 
-    <style name="tv_normal_gray" >
+    <style name="tv_normal_gray">
 
         <item name="android:textColor">@color/text_gray</item>
         <item name="android:textSize">@dimen/text_nromal</item>
@@ -10,7 +10,7 @@
     </style>
 
 
-    <style name="tv_large_gray" >
+    <style name="tv_large_gray">
 
         <item name="android:textColor">@color/text_gray</item>
         <item name="android:textSize">@dimen/text_nromal</item>
@@ -18,7 +18,7 @@
     </style>
 
 
-    <style name="tv_title" >
+    <style name="tv_title">
 
         <item name="android:textColor">@color/text_gray</item>
         <item name="android:textSize">@dimen/text_nromal</item>
@@ -32,7 +32,7 @@
         <item name="android:textAlignment">textStart</item>
     </style>
 
-    <style name="normal_tv_white" >
+    <style name="normal_tv_white">
         <item name="android:textColor">@color/light_gray</item>
         <item name="android:textSize">@dimen/text_nromal</item>
     </style>
@@ -41,10 +41,12 @@
         <item name="android:textSize">@dimen/text_normal</item>
         <item name="android:textColor">@color/flb_color</item>
     </style>
+
     <style name="small_tv_red">
         <item name="android:textSize">@dimen/text_small</item>
         <item name="android:textColor">@color/flb_color</item>
     </style>
+
     <style name="normal_tv_black">
         <item name="android:textSize">@dimen/text_normal</item>
         <item name="android:textColor">@color/text_black</item>
@@ -52,7 +54,8 @@
 
     <style name="bt_login">
         <item name="android:background">@drawable/bt_login_selector</item>
-<item name="android:textSize">@dimen/text_nromal</item>
+        <item name="android:textSize">@dimen/text_nromal</item>
+        <item name="android:textColor">@color/white_back</item>
 
     </style>
 </resources>

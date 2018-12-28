@@ -2,9 +2,9 @@
 
     package="me.goldze.mvvmhabit">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <application>
-        <activity android:name=".com.bondex.ysl.bondex.base.ContainerActivity"></activity>
         <activity
             android:name=".crash.DefaultErrorActivity"
             android:process=":error_activity" />

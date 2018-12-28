@@ -12,16 +12,10 @@ import android.provider.MediaStore;
 import android.support.annotation.Nullable;
 import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
-
 import com.bondex.ysl.bondex.base.R;
 import com.bondex.ysl.bondex.base.BR;
-
 import me.goldze.mvvmhabit.base.BaseActivity;
-
 import com.bondex.ysl.bondex.base.databinding.ActivityViedoBinding;
-
-import java.io.File;
 
 
 public class VideoActivity extends BaseActivity<ActivityViedoBinding, VideoViewModle> {
@@ -86,8 +80,9 @@ public class VideoActivity extends BaseActivity<ActivityViedoBinding, VideoViewM
             actualimagecursor.moveToFirst();
             String img_path = actualimagecursor.getString(actual_image_column_index);
 
-            com.bondex.ysl.videolibrary.VideoActivity.intentTo(VideoActivity.this,img_path,"测试");
+            Log.i("aaa","img_path "+img_path);
 
+            com.bondex.ysl.videolibrary.VideoActivity.intentTo(VideoActivity.this,img_path,"测试");
         }
 
 

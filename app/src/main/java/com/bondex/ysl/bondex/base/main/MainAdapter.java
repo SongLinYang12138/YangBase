@@ -127,7 +127,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                     case "font":
                         intent = new Intent(context, TextActivity.class);
                         break;
-
                     case "edit":
                         intent = new Intent(context, EditActivity.class);
                         break;
@@ -169,7 +168,6 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                         break;
                     case "network":
                         intent = new Intent(context, NetWorkActivity.class);
-
                         break;
                     case "image":
                         intent = new Intent(context, ImageActivity.class);
@@ -180,6 +178,7 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                 }
 
                 if (intent != null) context.startActivity(intent);
+
             }
         };
 
