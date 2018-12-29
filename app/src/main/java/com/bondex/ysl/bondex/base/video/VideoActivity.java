@@ -2,6 +2,7 @@ package com.bondex.ysl.bondex.base.video;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.database.Cursor;
@@ -10,12 +11,20 @@ import android.os.Build;
 import android.os.Bundle;
 import android.provider.MediaStore;
 import android.support.annotation.Nullable;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import com.bondex.ysl.bondex.base.R;
 import com.bondex.ysl.bondex.base.BR;
 import me.goldze.mvvmhabit.base.BaseActivity;
+import me.goldze.mvvmhabit.utils.CommonUtil;
+import me.goldze.mvvmhabit.utils.FileUtils;
+import me.goldze.mvvmhabit.utils.MiPictureHelper;
+import me.goldze.mvvmhabit.utils.ToastUtils;
+
 import com.bondex.ysl.bondex.base.databinding.ActivityViedoBinding;
+
+import java.net.URISyntaxException;
 
 
 public class VideoActivity extends BaseActivity<ActivityViedoBinding, VideoViewModle> {
@@ -73,18 +82,18 @@ public class VideoActivity extends BaseActivity<ActivityViedoBinding, VideoViewM
 
 
         if (resultCode == Activity.RESULT_OK) {//是否选择，没选择就不会继续
-            Uri uri = data.getData();//得到uri，后面就是将uri转化成file的过程。
-            String[] proj = {MediaStore.Video.Media.DATA};
-            Cursor actualimagecursor = managedQuery(uri, proj, null, null, null);
-            int actual_image_column_index = actualimagecursor.getColumnIndexOrThrow(MediaStore.Video.Media.DATA);
-            actualimagecursor.moveToFirst();
-            String img_path = actualimagecursor.getString(actual_image_column_index);
+            String video_path = null;
 
-            Log.i("aaa","img_path "+img_path);
+            Uri uri=data.getData();
+               video_path=FileUtils.getInstance(this).getChooseFileResultPath(uri);
 
-            com.bondex.ysl.videolibrary.VideoActivity.intentTo(VideoActivity.this,img_path,"测试");
+            com.bondex.ysl.videolibrary.VideoActivity.intentTo(VideoActivity.this,video_path,"测试");
         }
 
 
     }
+
+
+
+
 }

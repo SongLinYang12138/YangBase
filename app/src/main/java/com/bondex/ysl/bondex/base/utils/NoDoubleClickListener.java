@@ -15,7 +15,6 @@ public abstract class NoDoubleClickListener implements View.OnClickListener {
     public void onClick(View v) {
 
         if(System.currentTimeMillis() - lastClick > 500){
-
             noDouble(v);
             lastClick = System.currentTimeMillis();
         }

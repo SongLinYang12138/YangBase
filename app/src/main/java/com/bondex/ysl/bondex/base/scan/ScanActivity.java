@@ -36,13 +36,11 @@ public class ScanActivity extends BaseActivity<ActivityScanBinding, ScanModle> {
     public void initViewObservable() {
         super.initViewObservable();
 
-
         if(checkCallingOrSelfPermission(Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED){
 
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
                 requestPermissions(new String[]{Manifest.permission.CAMERA},111);
             }
-
         }
 
         showLeft(true,this);

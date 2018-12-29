@@ -63,6 +63,7 @@ public class VideoActivity extends AppCompatActivity implements TracksFragment.I
     private boolean mBackPressed;
 
     public static Intent newIntent(Context context, String videoPath, String videoTitle) {
+
         Intent intent = new Intent(context, VideoActivity.class);
         intent.putExtra("videoPath", videoPath);
         intent.putExtra("videoTitle", videoTitle);
