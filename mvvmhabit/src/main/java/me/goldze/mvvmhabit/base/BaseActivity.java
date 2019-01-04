@@ -106,7 +106,6 @@ public abstract class BaseActivity<V extends ViewDataBinding, VM extends BaseVie
         //DataBindingUtil类需要在project的build中配置 dataBinding {enabled true }, 同步后会自动关联android.databinding包
         binding = DataBindingUtil.setContentView(this, initContentView(savedInstanceState));
 
-
         binding.getRoot().setFitsSystemWindows(true);
         ivBack = binding.getRoot().findViewById(R.id.title_back);
         tvTitle = binding.getRoot().findViewById(R.id.title_title);

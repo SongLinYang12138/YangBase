@@ -28,6 +28,7 @@ import android.widget.MediaController;
 import java.util.ArrayList;
 
 public class AndroidMediaController extends MediaController implements IMediaController {
+
     private ActionBar mActionBar;
 
     public AndroidMediaController(Context context, AttributeSet attrs) {

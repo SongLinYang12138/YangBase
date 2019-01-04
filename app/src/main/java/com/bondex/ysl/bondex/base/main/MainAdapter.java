@@ -29,6 +29,7 @@ import com.bondex.ysl.bondex.base.text.TextActivity;
 import com.bondex.ysl.bondex.base.utils.NoDoubleClickListener;
 import com.bondex.ysl.bondex.base.video.VideoActivity;
 import com.bondex.ysl.bondex.base.webview.WebviewActivity;
+import com.ywanhzy.demo.ui.MenuManageActivity;
 
 import java.util.ArrayList;
 
@@ -175,6 +176,8 @@ public class MainAdapter extends RecyclerView.Adapter<MainAdapter.ViewHolder> {
                     case "video":
                         intent = new Intent(context,VideoActivity.class);
                         break;
+                    case "menu":
+                        intent = new Intent(context,MenuManageActivity.class);
                 }
 
                 if (intent != null) context.startActivity(intent);

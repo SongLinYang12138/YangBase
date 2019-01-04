@@ -42,7 +42,7 @@ public class MainViewModle extends BaseViewModel {
         tmpList.add(new MainMenuBean("网络设置","network"));
         tmpList.add(new MainMenuBean("图片","image"));
         tmpList.add(new MainMenuBean("视频","video"));
-
+        tmpList.add(new MainMenuBean("菜单","menu"));
 //        tmpList.add(new MainMenu("等待框","loading"));
 //        tmpList.add(new MainMenu("等待框","loading"));
 

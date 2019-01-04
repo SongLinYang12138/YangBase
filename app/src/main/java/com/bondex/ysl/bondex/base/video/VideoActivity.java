@@ -2,29 +2,18 @@ package com.bondex.ysl.bondex.base.video;
 
 import android.Manifest;
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
-import android.database.Cursor;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.provider.MediaStore;
 import android.support.annotation.Nullable;
-import android.text.TextUtils;
-import android.util.Log;
 import android.view.View;
 import com.bondex.ysl.bondex.base.R;
 import com.bondex.ysl.bondex.base.BR;
 import me.goldze.mvvmhabit.base.BaseActivity;
-import me.goldze.mvvmhabit.utils.CommonUtil;
 import me.goldze.mvvmhabit.utils.FileUtils;
-import me.goldze.mvvmhabit.utils.MiPictureHelper;
-import me.goldze.mvvmhabit.utils.ToastUtils;
-
 import com.bondex.ysl.bondex.base.databinding.ActivityViedoBinding;
-
-import java.net.URISyntaxException;
 
 
 public class VideoActivity extends BaseActivity<ActivityViedoBinding, VideoViewModle> {
@@ -62,6 +51,8 @@ public class VideoActivity extends BaseActivity<ActivityViedoBinding, VideoViewM
     public void initData() {
         super.initData();
 
+        showLeft(true,this);
+        showTitle(true,"VIDEO");
 
         binding.videoChoose.setOnClickListener(new View.OnClickListener() {
             @Override
